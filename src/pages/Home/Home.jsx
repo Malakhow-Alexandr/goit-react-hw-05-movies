@@ -1,13 +1,34 @@
+import { useState, useEffect } from 'react';
+import { fetchTrendingMovie } from 'utils/FetchAPIService';
+import { TrendingList } from './Home.styled';
+import TrendingListItem from 'components/TrandingListItem/TrandingListItem';
+
 const Home = () => {
+  const [trendingMovie, setTrendingMovie] = useState([]);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const fetchTrendingData = async () => {
+      setLoading(true);
+      try {
+        const data = await fetchTrendingMovie();
+        setTrendingMovie(data);
+      } catch (error) {
+        setError(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchTrendingData();
+  }, []);
+
   return (
     <main>
-      <h1>Welcome</h1>
-      <img src="https://via.placeholder.com/960x240" alt="" />
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto,
-        laboriosam placeat incidunt rem illum animi nemo quibusdam quia
-        voluptatum voluptate.
-      </p>
+      <h1>Trending today</h1>
+      <TrendingList>
+        <TrendingListItem movies={trendingMovie} />
+      </TrendingList>
     </main>
   );
 };
