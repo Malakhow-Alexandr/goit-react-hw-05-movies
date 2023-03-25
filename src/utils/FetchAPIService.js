@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { transformTrendingMovieData } from './transformTrendingMovieData';
+import { transformMovieDetailsData } from './transformMovieDetailsData';
 
 const API_KEY = '23b29489e8683674f60bf34658264370';
 axios.defaults.baseURL = 'https://api.themoviedb.org/3';
@@ -18,4 +19,9 @@ export const fetchTrendingMovie = async () => {
 
 export const fetchMovieDetails = async id => {
   const { data } = await axios.get(`/movie/${id}`);
+  const dataArr = [];
+  dataArr.push(data);
+  console.log(dataArr);
+  const movie = transformMovieDetailsData(dataArr);
+  return movie;
 };

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { fetchTrendingMovie } from 'utils/FetchAPIService';
+import { fetchTrendingMovie } from 'utils/fetchAPIService';
 import { SharedLayout } from './SharedLayout/SharedLayout';
 
 const Home = lazy(() => import('../pages/Home/Home'));

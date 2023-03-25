@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { fetchTrendingMovie } from 'utils/FetchAPIService';
+import { fetchTrendingMovie } from 'utils/fetchAPIService';
 import { TrendingList } from './Home.styled';
 import TrendingListItem from 'components/TrandingListItem/TrandingListItem';
 
