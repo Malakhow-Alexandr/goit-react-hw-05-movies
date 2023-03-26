@@ -9,19 +9,31 @@ axios.defaults.params = {
   api_key: API_KEY,
 };
 
-export const fetchTrendingMovie = async () => {
-  const { data } = await axios.get('/trending/movie/day');
+export const fetchTrendingMovie = async controller => {
+  const { data } = await axios.get('/trending/movie/day', {
+    signal: controller.signal,
+  });
 
   const movies = transformTrendingMovieData(data);
 
   return movies;
 };
 
-export const fetchMovieDetails = async id => {
-  const { data } = await axios.get(`/movie/${id}`);
+export const fetchMovieDetails = async (id, controller) => {
+  const { data } = await axios.get(`/movie/${id}`, {
+    signal: controller.signal,
+  });
   const dataArr = [];
   dataArr.push(data);
-  console.log(dataArr);
   const movie = transformMovieDetailsData(dataArr);
   return movie;
+};
+
+export const fetchMovieByName = async (query, controller) => {
+  const { data } = await axios.get(`/search/movie?query=${query}`, {
+    signal: controller.signal,
+  });
+  const movies = transformTrendingMovieData(data);
+
+  return movies;
 };

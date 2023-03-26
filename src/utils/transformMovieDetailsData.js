@@ -1,3 +1,5 @@
+import { formatReleaseDate } from './formatReleaseDate';
+
 export const transformMovieDetailsData = data => {
   const hiRating = 10;
 
@@ -13,7 +15,7 @@ export const transformMovieDetailsData = data => {
     }) => ({
       id,
       title,
-      release,
+      release: `(${formatReleaseDate(release)})`,
       genres: `${genres.map(ganre => ganre.name).join(', ')}`,
       poster: `https://image.tmdb.org/t/p/w500${poster}`,
       userScore: `User Score: ${Math.floor((vote_average / hiRating) * 100)}%`,

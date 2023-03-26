@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-const TrendingListItem = ({ movies }) => {
+const MovieListItem = ({ movies }) => {
   return (
     <>
       {movies.map(({ id, title, rating, poster }) => (
@@ -17,4 +17,4 @@ const TrendingListItem = ({ movies }) => {
   );
 };
 
-export default TrendingListItem;
+export default MovieListItem;

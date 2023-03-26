@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const TrendingList = styled.ul`
+export const MovieListStyled = styled.ul`
   list-style: none;
   display: flex;
   flex-wrap: wrap;
