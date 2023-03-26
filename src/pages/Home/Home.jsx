@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { fetchTrendingMovie } from 'utils/fetchAPIService';
 import MoviesList from 'components/MovieList/MovieList';
 
@@ -6,6 +7,8 @@ const Home = () => {
   const [trendingMovie, setTrendingMovie] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
+
+  const location = useLocation();
 
   useEffect(() => {
     const abortController = new AbortController();
@@ -30,7 +33,7 @@ const Home = () => {
   return (
     <main>
       <h1>Trending today</h1>
-      <MoviesList movies={trendingMovie} />
+      <MoviesList movies={trendingMovie} location={location} />
     </main>
   );
 };

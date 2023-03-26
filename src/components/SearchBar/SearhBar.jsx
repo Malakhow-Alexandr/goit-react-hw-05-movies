@@ -39,9 +39,7 @@ export const SearchBar = ({ onSubmit }) => {
           type="text"
           name="movieName"
           value={searchQuery}
-          onChange={event => {
-            setSearchQuery(event.currentTarget.value);
-          }}
+          onChange={event => setSearchQuery(event.target.value)}
         />
       </SearchForm>
     </SearchBarStyled>

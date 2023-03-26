@@ -25,7 +25,9 @@ export const fetchMovieDetails = async (id, controller) => {
   });
   const dataArr = [];
   dataArr.push(data);
+
   const movie = transformMovieDetailsData(dataArr);
+
   return movie;
 };
 
@@ -36,4 +38,17 @@ export const fetchMovieByName = async (query, controller) => {
   const movies = transformTrendingMovieData(data);
 
   return movies;
+};
+
+export const fetchActorList = async (id, controller) => {
+  const { data } = await axios.get(`/movie/${id}`, {
+    signal: controller.signal,
+  });
+  const dataArr = [];
+  dataArr.push(data);
+
+  const movie = transformMovieDetailsData(dataArr);
+
+  return movie;
+  // const { data } = await axios.get(`/movie/${id}/credits`);
 };
