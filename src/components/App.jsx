@@ -1,4 +1,4 @@
-import { useEffect, useState, lazy } from 'react';
+import { lazy } from 'react';
 
 import { Routes, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
@@ -11,6 +11,7 @@ const NotFound = lazy(() => import('../pages/NotFound/NotFound'));
 const MovieDetails = lazy(() => import('../pages/MoviesDetails/MovieDetails'));
 const Movies = lazy(() => import('../pages/Movies/Movies'));
 const ActorList = lazy(() => import('../components/ActorList/ActorList'));
+const Reviews = lazy(() => import('../components/Reviews/Reviews'));
 
 export const App = () => {
   return (
@@ -20,11 +21,8 @@ export const App = () => {
           <Route index element={<Home />} />
           <Route path="movies" element={<Movies />} />
           <Route path="/movies/:movieId" element={<MovieDetails />}>
-            <Route path="/movies/:movieId/cast" element={<ActorList />} />
-            <Route
-              path="/movies/:movieId/reviews"
-              element={<div>hello review</div>}
-            />
+            <Route path="cast" element={<ActorList />} />
+            <Route path="reviews" element={<Reviews />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Route>

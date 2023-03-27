@@ -1,5 +1,5 @@
-import { useState, useEffect, lazy, useRef } from 'react';
-import { useParams, useLocation, Link } from 'react-router-dom';
+import { useState, useEffect, useRef } from 'react';
+import { useParams, useLocation } from 'react-router-dom';
 import { fetchMovieDetails } from 'utils/fetchAPIService';
 import MovieDescription from 'components/MovieDescription/MovieDescription';
 import AdditionalInformation from 'components/AdditionalInformation/AdditionalInformation';
