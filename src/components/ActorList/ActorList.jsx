@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import ActorListItem from 'components/ActorListItem.jsx/ActorListItem';
 import { ThreeCircles } from 'react-loader-spinner';
 import { ActorListStyled } from './ActorList.styled';
-import { fetchActorList } from '../../utils/fetchAPIService';
+import { fetchActorList } from 'utils/fetchActorList';
 
 const ActorList = () => {
   const [actorList, setActorList] = useState([]);
