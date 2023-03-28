@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useLocation, useSearchParams } from 'react-router-dom';
 import { SearchBar } from 'components/SearchBar/SearhBar';
 import MoviesList from 'components/MovieList/MovieList';
-import { fetchMovieByName } from 'utils/fetchAPIService';
+import { fetchMovieByName } from 'utils/fetchMovieByname';
 import { toast } from 'react-toastify';
 import { ThreeCircles } from 'react-loader-spinner';
 

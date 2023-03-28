@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { fetchTrendingMovie } from 'utils/fetchAPIService';
+import { fetchTrendingMovie } from 'utils/fetchTrendinngMovies';
 import MoviesList from 'components/MovieList/MovieList';
 import { ThreeCircles } from 'react-loader-spinner';
 

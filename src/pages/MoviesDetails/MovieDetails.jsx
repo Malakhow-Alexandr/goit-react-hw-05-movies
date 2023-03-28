@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { useParams, useLocation } from 'react-router-dom';
-import { fetchMovieDetails } from 'utils/fetchAPIService';
+import { fetchMovieDetails } from 'utils/fetchMovieDetals';
 import MovieDescription from 'components/MovieDescription/MovieDescription';
 import AdditionalInformation from 'components/AdditionalInformation/AdditionalInformation';
 import BackLink from 'components/BackLink/BackLink';
