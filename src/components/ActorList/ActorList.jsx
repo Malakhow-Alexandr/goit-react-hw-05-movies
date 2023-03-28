@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { fetchActorList } from 'utils/fetchAPIService';
 import ActorListItem from 'components/ActorListItem.jsx/ActorListItem';
 import { ThreeCircles } from 'react-loader-spinner';
 import { ActorListStyled } from './ActorList.styled';
+import { fetchActorList } from '../../utils/fetchAPIService';
 
 const ActorList = () => {
   const [actorList, setActorList] = useState([]);
