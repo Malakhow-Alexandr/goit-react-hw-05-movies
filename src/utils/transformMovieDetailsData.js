@@ -1,4 +1,5 @@
 import { formatReleaseDate } from './formatReleaseDate';
+import { defaultPic } from './transformTrendingMovieData';
 
 export const transformMovieDetailsData = data => {
   const hiRating = 10;
@@ -17,7 +18,7 @@ export const transformMovieDetailsData = data => {
       title,
       release: `(${formatReleaseDate(release)})`,
       genres: `${genres.map(ganre => ganre.name).join(', ')}`,
-      poster: `https://image.tmdb.org/t/p/w500${poster}`,
+      poster: !poster ? defaultPic : `https://image.tmdb.org/t/p/w500${poster}`,
       userScore: `User Score: ${Math.floor((vote_average / hiRating) * 100)}%`,
       overview,
     })

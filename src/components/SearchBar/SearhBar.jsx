@@ -26,23 +26,25 @@ export const SearchBar = ({ onSubmit }) => {
   };
 
   return (
-    <SearchBarStyled className="Searchbar">
-      <SearchForm className="SearchForm" onSubmit={handleSubmit}>
-        <SearchButton className="SearchForm-button" type="submit">
-          <SearchButtonLabel className="SearchForm-button-label">
-            Find
-          </SearchButtonLabel>
-        </SearchButton>
-        <SearchFormInput
-          placeholder="Hello I am Movie Search!"
-          className="SearchForm-input"
-          type="text"
-          name="movieName"
-          value={searchQuery}
-          onChange={event => setSearchQuery(event.target.value)}
-        />
-      </SearchForm>
-    </SearchBarStyled>
+    <main>
+      <SearchBarStyled className="Searchbar">
+        <SearchForm className="SearchForm" onSubmit={handleSubmit}>
+          <SearchButton className="SearchForm-button" type="submit">
+            <SearchButtonLabel className="SearchForm-button-label">
+              Find
+            </SearchButtonLabel>
+          </SearchButton>
+          <SearchFormInput
+            placeholder="Hello I am Movie Search!"
+            className="SearchForm-input"
+            type="text"
+            name="movieName"
+            value={searchQuery}
+            onChange={event => setSearchQuery(event.target.value)}
+          />
+        </SearchForm>
+      </SearchBarStyled>
+    </main>
   );
 };
 
