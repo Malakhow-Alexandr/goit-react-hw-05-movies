@@ -1,7 +1,6 @@
 import axios from 'axios';
 import { transformTrendingMovieData } from './transformTrendingMovieData';
 import { transformMovieDetailsData } from './transformMovieDetailsData';
-import { transformReviewsData } from './transformReviewsData';
 
 const API_KEY = '23b29489e8683674f60bf34658264370';
 axios.defaults.baseURL = 'https://api.themoviedb.org/3';
@@ -39,13 +38,4 @@ export const fetchMovieByName = async (query, controller) => {
   const movies = transformTrendingMovieData(data);
 
   return movies;
-};
-
-export const fetchReviews = async (id, controller) => {
-  const { data } = await axios.get(`/movie/${id}/reviews`, {
-    signal: controller.signal,
-  });
-  const reviewsData = transformReviewsData(data);
-
-  return reviewsData;
 };

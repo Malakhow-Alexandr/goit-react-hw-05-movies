@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { fetchReviews } from 'utils/fetchAPIService';
+import { fetchReviews } from 'utils/fetchReviewsList';
 import { ThreeCircles } from 'react-loader-spinner';
 import ReviewsItem from 'components/ReviewsItem/ReviewsItem';
 import { ReviewsList } from './Reviews.styled';
